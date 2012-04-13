@@ -25,7 +25,6 @@ namespace JsonSettingsDemo
                 var configJson = reader.ReadToEnd();
                 reader.Close();
                 theSetting = JsonConvert.DeserializeObject<T>(configJson);
-                theSetting._filename = filename;
             }
             else
             {
