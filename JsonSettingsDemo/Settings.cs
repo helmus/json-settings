@@ -6,6 +6,12 @@ namespace JsonSettingsDemo
     public abstract class Settings
     {
         private string _filename;
+        
+        // You can optionally set default values by overriding defaults
+        protected virtual void defaults()
+        {
+            // implementation is optional    
+        }
 
         /// <summary>
         /// This function will load in our settings object, if the file does not exists,
@@ -29,6 +35,7 @@ namespace JsonSettingsDemo
             else
             {
                 theSetting = new T();
+                theSetting.defaults();
             }
 
             theSetting._filename = filename;
