@@ -7,10 +7,12 @@ namespace JsonSettingsDemo
     {
         private string _filename;
         
-        // You can optionally set default values by overriding defaults
+        /// <summary>
+        /// Override this class if you want to set defaults when no config file exists
+        /// </summary>
         protected virtual void defaults()
         {
-            // implementation is optional    
+            
         }
 
         /// <summary>
